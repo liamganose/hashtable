@@ -37,6 +37,7 @@ Node<T_KEY, T_VALUE>::Node(T_KEY key, T_VALUE value) {
 template<typename T_KEY, typename T_VALUE>
 Node<T_KEY, T_VALUE>::Node() {
 
+    data = T_VALUE();
     next_node = NULL;
 
 }
