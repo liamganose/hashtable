@@ -12,9 +12,9 @@ BINDIR := bin
 TARGET := $(BINDIR)/main.exe
 
 $(TARGET): $(OBJECTS)
-	-mkdir bin
+	-@mkdir bin || :
 	$(CC) $^ -o $(TARGET)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT) $(INCLUDES) Makefile
-	-mkdir build
+	-@mkdir build || :
 	$(CC) $(INC) -c -o $@ $<
