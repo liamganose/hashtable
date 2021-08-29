@@ -128,7 +128,7 @@ void LinkedList<T_KEY, T_VALUE>::insert(Node<T_KEY, T_VALUE>* new_node, Node<T_K
     // This check is added to avoid pointing a node to itself and to stop any funny business with the tail
     // and the head looping - this is a list not a circle
     if (prev_node == new_node) {
-        cout << "[WARNING] New node cannot be the same as the old node" << endl;
+        std::cout << "[WARNING] New node cannot be the same as the old node" << std::endl;
         return;
     }
 
@@ -171,7 +171,7 @@ void LinkedList<T_KEY, T_VALUE>::remove(Node<T_KEY, T_VALUE>* remove_node) {
     }
 
     if (!node_found) {
-        cout << "[WARNING] Node is not in the list." << endl;
+        std::cout << "[WARNING] Node is not in the list." << std::endl;
     } else {
         size--;
     }
@@ -190,8 +190,8 @@ void LinkedList<T_KEY, T_VALUE>::print_list() {
 
     Node<T_KEY, T_VALUE>* next_itr = head;
     for (int i=0; i<size; i++) {
-        cout << "[INFO] Key: " << next_itr->get_data().first;
-        cout << " Value: " << next_itr->get_data().second << endl;
+        std::cout << "[INFO] Key: " << next_itr->get_data().first;
+        std::cout << " Value: " << next_itr->get_data().second << std::endl;
         next_itr = next_itr->get_next_node();
     }
 

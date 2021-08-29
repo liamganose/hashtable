@@ -1,12 +1,11 @@
 #ifndef HASH_TABLE_H
 #define HASH_TABLE_H
 
+#include <iostream>
 #include <string>
 #include <utility>
 #include <unordered_map>
 #include <linked_list.hpp>
-
-using namespace std;
 
 template<typename T_KEY, typename T_VALUE>
 class HashTable {
@@ -52,7 +51,7 @@ bool HashTable<T_KEY, T_VALUE>::is_empty() {
 template<typename T_KEY, typename T_VALUE>
 int HashTable<T_KEY, T_VALUE>::hash_function(T_KEY key) {
 
-    return hash<T_KEY>{}(key) % hash_buckets;
+    return std::hash<T_KEY>{}(key) % hash_buckets;
 
 }
 
@@ -66,8 +65,8 @@ void HashTable<T_KEY, T_VALUE>::insert(T_KEY key, T_VALUE value) {
     for (Iterator<T_KEY, T_VALUE> ptr_node = ll.begin(); *ptr_node != nullptr; ptr_node++) {
         if ((*ptr_node)->get_data().first == key) {
             key_exists = true;
-            (*ptr_node)->set_data(pair<T_KEY, T_VALUE>(key, value));
-            cout << "[WARNING] Key esists. Value replaced." << endl;
+            (*ptr_node)->set_data(std::pair<T_KEY, T_VALUE>(key, value));
+            std::cout << "[WARNING] Key esists. Value replaced." << std::endl;
             break;
         }
     }
@@ -94,7 +93,7 @@ void HashTable<T_KEY, T_VALUE>::remove(T_KEY key) {
     }
 
     if (!key_exists) {
-        cout << "[WARNING] Key not found." << endl;
+        std::cout << "[WARNING] Key not found." << std::endl;
     }
 
 }
@@ -111,7 +110,7 @@ T_VALUE HashTable<T_KEY, T_VALUE>::get(T_KEY key) {
         }
     }
 
-    cout << "[WARNING] Key not found." << endl;
+    std::cout << "[WARNING] Key not found." << std::endl;
     return T_VALUE();
 
 }
