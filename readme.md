@@ -1,4 +1,4 @@
-# Basic hash table implementation to practice C++
+# Basic hash table implementatio
 
 ## Info
  - created my own linked list class to use in it, not necessary but helped re-learn pointers (for the 3rd time) 
