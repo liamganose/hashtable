@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
+using std::string, std:cout, std:endl;
 
 // This is just an example custom data object to test the code and make sure templating was successful
 struct Person {
