@@ -1,4 +1,4 @@
-# Basic hash table implementatio
+# Basic hash table implementation
 
 ## Info
  - created my own linked list class to use in it, not necessary but helped re-learn pointers (for the 3rd time) 
